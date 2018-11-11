@@ -27,7 +27,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
     public void validacion(){
         if((txtId.getText().toString().equals("123456")) && (txtClave.getText().toString().equals("123456") )){
-            startActivity(new Intent(this, Menu.class));
+            startActivity(new Intent(this, Recepcion.class));
         }else{
             Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
         }

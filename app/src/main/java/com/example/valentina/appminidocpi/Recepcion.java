@@ -16,51 +16,53 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Recepcion extends AppCompatActivity implements ValueEventListener {
 
-    Button btnConfirmarMed;
-    TextView txtHorario;
-    Integer dosis;
+    TextView tvMed, Med;
+
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRootReference = firebaseDatabase.getReference();
-    private DatabaseReference mPruebaReference = mRootReference.child("Pacientes").child("p1").child("Formula").child("Medicamento");
+    private DatabaseReference mPruebaReference = mRootReference.child("Pacientes").child("p1").child("Medicamento");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirmar);
+        setContentView(R.layout.activity_recepcion);
         iniciar();
     }
 
     private void iniciar() {
-        btnConfirmarMed = findViewById(R.id.btnConfirmarMed);
-        txtHorario = findViewById(R.id.txtHorario);
+        tvMed = findViewById(R.id.tvMed);
+        Med = findViewById(R.id.Med);
+
     }
 
     @Override
     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-        if(dataSnapshot.getValue(String.class) != null){
+        if(dataSnapshot.getValue(String.class)!= null){
             String key = dataSnapshot.getKey();
-            if(key.equals("Dosis")){
-                String estado = dataSnapshot.getValue(String.class);
-                dosis = Integer.parseInt(estado);
-                txtHorario.setText(dosis - 1);
+            if(key.equals("Medicamento")){
+                String prueba = dataSnapshot.getValue(String.class);
+                tvMed.setText(prueba);
             }
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
 
     @Override
     public void onCancelled(@NonNull DatabaseError databaseError) {
 
     }
-    public void confirmarMedicina(View view) {
-        int recibido=0 ;
-        recibido= recibido + 1;
-        mPruebaReference.setValue(recibido);
-        startActivity(new Intent(this, Menu.class));
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //mPacienteReference.addValueEventListener(this);
+        mPruebaReference.addValueEventListener(this);
+    }
+
+    public void actionConfirmar(View view) {
+        startActivity(new Intent(this, Confirmar.class));
+    }
+
+    public void actionNovedad(View view) {
+        startActivity(new Intent(this, Novedad.class));
     }
 }

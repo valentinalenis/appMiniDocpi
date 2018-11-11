@@ -57,20 +57,6 @@
         tools:layout_editor_absoluteX="182dp"
         tools:layout_editor_absoluteY="102dp" />
 
-    <ImageButton
-        android:id="@+id/btnListar"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="236dp" />
 
-    <ImageButton
-        android:id="@+id/btnAjustes"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:srcCompat="@android:drawable/ic_menu_manage"
-        tools:layout_editor_absoluteX="182dp"
-        tools:layout_editor_absoluteY="236dp" />
 
 </LinearLayout>

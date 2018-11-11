@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener , ValueEventListener {
     TextView tvMed, Med;
-    ImageButton btnVerificar, btnNovedad, btnListar,btnAjustes;
+    ImageButton btnVerificar, btnNovedad;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRootReference = firebaseDatabase.getReference();
@@ -31,15 +31,13 @@ public class Menu extends AppCompatActivity implements View.OnClickListener , Va
         iniciar();
         btnVerificar.setOnClickListener(this);
         btnNovedad.setOnClickListener(this);
-        btnListar.setOnClickListener(this);
-        btnAjustes.setOnClickListener(this);
+
     }
 
     public void iniciar(){
         btnVerificar =  findViewById(R.id.btnVerificar);
         btnNovedad = findViewById(R.id.btnNovedad);
-        btnListar =  findViewById(R.id.btnListar);
-        btnAjustes =  findViewById(R.id.btnAjustes);
+
         tvMed = findViewById(R.id.tvMed);
         Med = findViewById(R.id.Med);
 
@@ -48,17 +46,12 @@ public class Menu extends AppCompatActivity implements View.OnClickListener , Va
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case  R.id.btnAjustes:
-                //startActivity(new Intent(this, listar.class));
-                break;
+
             case  R.id.btnVerificar:
                 startActivity(new Intent(this, Confirmar.class));
                 break;
             case R.id.btnNovedad:
                 startActivity(new Intent(this, Novedad.class));
-                break;
-            case  R.id.btnListar:
-                //startActivity(new Intent(this, listar.class));
                 break;
 
         }

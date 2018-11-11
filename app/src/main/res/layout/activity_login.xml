@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/pg"
     tools:context=".login">
 
     <LinearLayout
@@ -18,27 +19,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed"
             android:text="MiniDocPi"
-            android:textColor= "#01DFD7"
-            android:textSize="40sp" />
-
-
-        android:id="@+id/grid1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_weight="1">
+            android:textColor= "@color/common_google_signin_btn_text_dark_default"
+            android:textSize="40sp"/>
+        <ImageView
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:src="@drawable/ic"
+            android:layout_marginTop="20dp"
+            />
+        >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor= "#01DFD7"
+            android:textColor= "@color/common_google_signin_btn_text_dark_default"
             android:text="Cedula:"
             android:textSize="20sp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="200dp"
             />
 
         <EditText
@@ -46,7 +46,9 @@
             style="@style/Widget.AppCompat.Light.ActionMode.Inverse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese aquí" />
+            android:hint="Ingrese aquí"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColorHint="@color/common_google_signin_btn_text_dark_default"/>
 
 
 
@@ -54,17 +56,24 @@
             android:id="@+id/tvClace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor= "#01DFD7"
+            android:textColor= "@color/common_google_signin_btn_text_dark_default"
             android:text="Contraseña:"
             android:textSize="22sp"
-            android:layout_marginTop="50px"/>
+            android:layout_marginTop="50px"
+            />
 
         <EditText
             android:id="@+id/txtClave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingrese aquí"
-            android:inputType="textPassword|numberPassword" />
+            android:inputType="textPassword|numberPassword"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:shadowColor="@color/common_google_signin_btn_text_dark_default"
+            android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+            android:textColorLink="@color/common_google_signin_btn_text_dark_default"
+
+            />
 
 
         <Button
@@ -75,7 +84,7 @@
             android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:text="Ingresar"
-            android:textColor= "#01DFD7"
+            android:textColor= "@color/common_google_signin_btn_text_dark_default"
             android:textSize="20sp" />
 
     </LinearLayout>

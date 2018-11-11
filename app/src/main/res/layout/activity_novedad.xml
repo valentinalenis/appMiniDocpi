@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".listar">
+    tools:context=".Novedad">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,43 +14,37 @@
         android:gravity="center"
         android:orientation="vertical"
         android:weightSum="4">
-        <LinearLayout
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:text="MEDICAMENTO:"
-                android:textSize="20dp"
-                android:id="@+id/Med"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:id="@+id/tvMed"/>
-
-        </LinearLayout>
-
+            android:text="Reportar novedad "
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor= "#01DFD7"
+            android:textSize="40sp"
+            android:gravity="center"/>
         <EditText
-            android:id="@+id/tvPrueba"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese aquí"
-            />
+            android:hint="Ingresar novedad"
+            android:id="@+id/txtNovedad"
+            android:layout_marginTop="50dp"/>
+
         <Button
-            android:id="@+id/btnAc"
+            android:id="@+id/btnEnvNovedad"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
-            android:text="Aceptar"
+            android:text="Enviar"
             android:textColor= "#01DFD7"
             android:textSize="20sp"
-            android:onClick="metAcept"/>
+            android:onClick="enviarNovedad"/>
 
+       
     </LinearLayout>
+
 </LinearLayout>

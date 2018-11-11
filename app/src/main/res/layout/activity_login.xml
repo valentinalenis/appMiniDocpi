@@ -35,8 +35,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor= "#01DFD7"
             android:text="Cedula:"
             android:textSize="20sp"
+            android:layout_marginTop="250dp"
             />
 
         <EditText
@@ -52,6 +54,7 @@
             android:id="@+id/tvClace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor= "#01DFD7"
             android:text="Contraseña:"
             android:textSize="22sp"
             android:layout_marginTop="50px"/>

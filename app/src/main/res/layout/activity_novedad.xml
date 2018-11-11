@@ -1,50 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Novedad">
 
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:id="@+id/appbar_layout"
+            android:layout_height="@dimen/app_bar_height"
+            android:background="@drawable/bg2">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_android_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginStart="@dimen/expanded_toolbar_title_margin_start"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reportar Novedad "
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor= "@color/common_google_signin_btn_text_dark_pressed"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:id="@+id/titulo1"/>
+
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/nestedscrollview"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:gravity="center"
         android:orientation="vertical"
-        android:weightSum="4">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reportar novedad "
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor= "#01DFD7"
-            android:textSize="40sp"
-            android:gravity="center"/>
+
+        >
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingresar novedad"
             android:id="@+id/txtNovedad"
-            android:layout_marginTop="50dp"/>
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"/>
+
 
         <Button
             android:id="@+id/btnEnvNovedad"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
             android:text="Enviar"
-            android:textColor= "#01DFD7"
-            android:textSize="20sp"
-            android:onClick="enviarNovedad"/>
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+            android:theme="@style/MyButton"
+            android:onClick="enviarNovedad"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            />
+
+
 
        
     </LinearLayout>
-
-</LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

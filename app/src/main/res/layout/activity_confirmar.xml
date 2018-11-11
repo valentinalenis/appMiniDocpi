@@ -6,7 +6,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Confirmar">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/appbar_layout"
+        android:layout_height="@dimen/app_bar_height"
+        android:background="@drawable/bg2">
 
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_android_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="@dimen/expanded_toolbar_title_margin_start"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmar recepción "
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor= "@color/common_google_signin_btn_text_dark_pressed"
+                android:textSize="40sp"
+                android:gravity="center"
+                android:id="@+id/titulo1"/>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/nestedscrollview"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,30 +57,25 @@
         android:orientation="vertical"
         android:weightSum="4">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirmar recepción "
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor= "#01DFD7"
-            android:textSize="40sp"
-            android:gravity="center"
-            android:id="@+id/titulo1"/>
+
+
+
 
         <Button
             android:id="@+id/btnConfirmarMed"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:text="Recibí mi medicina "
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-condensed"
             android:textColor= "@color/common_google_signin_btn_text_dark_default"
-            android:background="#01DFD7"
-            android:textSize="20sp"
+            android:theme="@style/MyButton"
+            android:layout_gravity="center_horizontal"
+
             />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -48,5 +85,5 @@
 
 
     </LinearLayout>
-
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

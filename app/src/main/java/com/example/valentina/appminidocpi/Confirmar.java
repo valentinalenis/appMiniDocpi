@@ -19,7 +19,7 @@ public class Confirmar extends AppCompatActivity implements ValueEventListener, 
 
     Button btnConfirmarMed;
     TextView txtHorario;
-    Integer dosis = 0;
+    static Integer dosis ;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRootReference = firebaseDatabase.getReference();
@@ -43,7 +43,7 @@ public class Confirmar extends AppCompatActivity implements ValueEventListener, 
         Integer recibido = result;
         mEstadoReference.setValue(recibido);
         btnConfirmarMed.setEnabled(Boolean.TRUE);
-        //startActivity(new Intent(this, Menu.class));
+        
     }
 
     @Override
@@ -65,5 +65,6 @@ public class Confirmar extends AppCompatActivity implements ValueEventListener, 
     @Override
     public void onClick(View v) {
         confirmarMedicina(++dosis);
+        startActivity(new Intent(this, Recepcion.class));
     }
 }

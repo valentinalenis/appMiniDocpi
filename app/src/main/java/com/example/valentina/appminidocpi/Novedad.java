@@ -46,6 +46,6 @@ public class Novedad extends AppCompatActivity  {
     public void enviarNovedad(View view) {
         String novedad = txtNovedad.getText().toString();
         mNovedadReference.setValue(novedad);
-        startActivity(new Intent(this, Menu.class));
+        startActivity(new Intent(this, Recepcion.class));
     }
 }

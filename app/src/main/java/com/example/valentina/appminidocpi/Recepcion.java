@@ -67,6 +67,7 @@ public class Recepcion extends AppCompatActivity implements ValueEventListener {
     }
 
     public void actionSalir(View view) {
+        finish();
         startActivity(new Intent(this, login.class));
     }
 }

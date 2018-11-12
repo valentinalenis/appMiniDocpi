@@ -5,8 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/pg"
+    android:background="@drawable/bg2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".login">
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +30,8 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="4"
+       >
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,62 +47,61 @@
             android:src="@drawable/ic"
             android:layout_marginTop="20dp"
             />
-        >
-
-        <TextView
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor= "@color/common_google_signin_btn_text_dark_default"
-            android:text="Cedula:"
-            android:textSize="20sp"
-            android:layout_marginTop="200dp"
-            />
+            android:layout_marginTop="150dp">
 
-        <EditText
+        <AutoCompleteTextView
+            android:layout_marginTop="150dp"
             android:id="@+id/txtId"
-            style="@style/Widget.AppCompat.Light.ActionMode.Inverse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese aquí"
+            android:hint="Ingrese cedula"
+            android:inputType="number"
+            android:maxLines="1"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textColorHint="@color/common_google_signin_btn_text_dark_default"/>
-
-
-
-        <TextView
-            android:id="@+id/tvClace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor= "@color/common_google_signin_btn_text_dark_default"
-            android:text="Contraseña:"
-            android:textSize="22sp"
-            android:layout_marginTop="50px"
-            />
-
-        <EditText
-            android:id="@+id/txtClave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ingrese aquí"
-            android:inputType="textPassword|numberPassword"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:shadowColor="@color/common_google_signin_btn_text_dark_default"
-            android:textColorHint="@color/common_google_signin_btn_text_dark_default"
+            android:singleLine="true"
             android:textColorLink="@color/common_google_signin_btn_text_dark_default"
+            android:textColorHint="@color/common_google_signin_btn_text_dark_default"/>
+        </android.support.design.widget.TextInputLayout>
 
-            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <EditText
+                android:id="@+id/txtClave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:imeActionId="6"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="22sp"
+                android:layout_marginTop="50px"
+                android:textColor= "@color/common_google_signin_btn_text_dark_default"
+                android:textColorLink="@color/common_google_signin_btn_text_dark_default"
+                android:textColorHint="@color/common_google_signin_btn_text_dark_default"/>
+
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btnLogin"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
+            android:layout_marginTop="16dp"
             android:text="Ingresar"
+            android:textStyle="bold"
+            android:layout_weight="1"
             android:textColor= "@color/common_google_signin_btn_text_dark_default"
-            android:textSize="20sp" />
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+
 
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>

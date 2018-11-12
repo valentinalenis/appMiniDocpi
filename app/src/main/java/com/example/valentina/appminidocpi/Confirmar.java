@@ -19,7 +19,7 @@ public class Confirmar extends AppCompatActivity implements ValueEventListener, 
 
     Button btnConfirmarMed;
     TextView txtHorario;
-    static Integer dosis ;
+    static Integer dosis=0 ;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mRootReference = firebaseDatabase.getReference();
